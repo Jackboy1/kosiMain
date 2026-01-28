@@ -4,10 +4,9 @@ export const Logo: React.FC = () => {
   return (
     <div className="flex flex-row items-center gap-4 group">
       {/* The metallic 'K' Icon */}
-      {/* i need the image to be bigger */}
       <div className="relative w-24 h-24 md:w-50 md:h-50 flex items-center justify-center">
         <img
-          src="/kosiImgd-removebg-preview.png"
+          src="https://i.ibb.co/fz0BVHCQ/Logo-1-1-removebg-preview.png"
           alt="Kosinko Logo"
           className="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-300"
         />
