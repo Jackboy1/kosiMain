@@ -14,6 +14,7 @@ import {
   Mail,
   MapPin,
   ExternalLink,
+  Instagram,
 } from "lucide-react";
 import { LogoImage } from "./components/LogoImage";
 
@@ -271,19 +272,19 @@ const App: React.FC = () => {
             </p>
             <div className="flex gap-4">
               <a
-                href="#"
+                href="https://www.instagram.com/kosinkotechnologies?igsh=MTBnbDA0aGZ2YWN6bA=="
                 className="p-3 bg-zinc-900 rounded-lg hover:bg-zinc-800 text-zinc-500 hover:text-blue-500 transition-all"
               >
-                <Github className="w-5 h-5" />
+                <Instagram className="w-5 h-5" />
               </a>
               <a
-                href="#"
+                href="https://x.com/KosinkoTechn"
                 className="p-3 bg-zinc-900 rounded-lg hover:bg-zinc-800 text-zinc-500 hover:text-blue-500 transition-all"
               >
                 <Twitter className="w-5 h-5" />
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com/in/kosiso-umeaka-a07698342?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
                 className="p-3 bg-zinc-900 rounded-lg hover:bg-zinc-800 text-zinc-500 hover:text-blue-500 transition-all"
               >
                 <Linkedin className="w-5 h-5" />
