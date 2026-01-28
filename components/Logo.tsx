@@ -17,8 +17,11 @@ export const Logo: React.FC = () => {
         <h1 className="text-2xl md:text-6xl font-heading font-extrabold tracking-[0.2em] metallic-text">
           Kosinko
         </h1>
-        <p className="text-[8px] md:text-[11px] font-medium tracking-[0.6em] text-zinc-500 mt-1 pl-1">
+        <p className="text-[8px] md:text-[13px] font-medium tracking-[0.6em] text-zinc-500 mt-1 pl-1">
           Technologies
+        </p>
+        <p className="text-[6px] md:text-[15px] mt-6 font-medium tracking-[0.4em] text-zinc-400 pl-1">
+          Built on security, doubled for prosperity
         </p>
       </div>
     </div>
