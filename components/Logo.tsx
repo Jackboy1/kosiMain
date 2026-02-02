@@ -18,7 +18,7 @@ export const Logo: React.FC = () => {
           Kosinko
         </h1>
         <p className="text-[8px] md:text-[13px] font-medium tracking-[0.6em] text-zinc-500 mt-1 pl-1">
-          Technologies
+          Technologies Global LTD
         </p>
         <p className="text-[6px] md:text-[15px] mt-6 font-medium tracking-[0.4em] text-zinc-400 pl-1">
           Built on security, doubled for prosperity

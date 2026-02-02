@@ -17,6 +17,7 @@ import {
   Instagram,
 } from "lucide-react";
 import { LogoImage } from "./components/LogoImage";
+import emailjs from "@emailjs/browser";
 
 export type View = "home" | "service-detail";
 
@@ -25,9 +26,15 @@ const App: React.FC = () => {
   const [selectedServiceId, setSelectedServiceId] = useState<string | null>(
     null,
   );
-  const [formStatus, setFormStatus] = useState<"idle" | "sending" | "sent">(
-    "idle",
-  );
+  const [formStatus, setFormStatus] = useState<
+    "idle" | "sending" | "sent" | "error"
+  >("idle");
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -49,6 +56,12 @@ const App: React.FC = () => {
     window.scrollTo(0, 0);
   }, [currentView, selectedServiceId]);
 
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
   const handleServiceSelect = (id: string) => {
     setSelectedServiceId(id);
     setCurrentView("service-detail");
@@ -59,10 +72,28 @@ const App: React.FC = () => {
     setSelectedServiceId(null);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setFormStatus("sending");
-    setTimeout(() => setFormStatus("sent"), 1500);
+
+    try {
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID || "service_YOUR_SERVICE_ID",
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "template_YOUR_TEMPLATE_ID",
+        {
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          to_email: "umeakakosiso@gmail.com",
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "YOUR_PUBLIC_KEY",
+      );
+
+      setFormStatus("sent");
+      setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      console.error(error);
+      setFormStatus("error");
+    }
   };
 
   const scrollToSection = (id: string) => {
@@ -210,6 +241,7 @@ const App: React.FC = () => {
                         <input
                           required
                           type="text"
+                          name="name"
                           className="w-full bg-black/60 border border-zinc-800 rounded-2xl px-6 py-5 text-white focus:outline-none focus:border-blue-500 transition-all placeholder-zinc-800 text-base"
                           placeholder="Name or Organization"
                         />
@@ -221,6 +253,9 @@ const App: React.FC = () => {
                         <input
                           required
                           type="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleChange}
                           className="w-full bg-black/60 border border-zinc-800 rounded-2xl px-6 py-5 text-white focus:outline-none focus:border-blue-500 transition-all placeholder-zinc-800 text-base"
                           placeholder="Email@Protocol.com"
                         />
@@ -233,13 +268,21 @@ const App: React.FC = () => {
                       <textarea
                         required
                         rows={6}
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
                         className="w-full bg-black/60 border border-zinc-800 rounded-2xl px-6 py-5 text-white focus:outline-none focus:border-blue-500 transition-all resize-none placeholder-zinc-800 text-base"
                         placeholder="Brief us on your requirements..."
                       ></textarea>
                     </div>
                     <button
                       type="submit"
-                      className="w-full custom-btn py-6 rounded-2xl text-white font-black tracking-[0.4em] text-sm uppercase shadow-3xl transition-all active:scale-[0.99] hover:shadow-blue-500/10"
+                      disabled={formStatus === "sending"}
+                      className={`w-full custom-btn py-6 rounded-2xl text-white font-black tracking-[0.4em] text-sm uppercase shadow-3xl transition-all active:scale-[0.99] hover:shadow-blue-500/10 ${
+                        formStatus === "sending"
+                          ? "bg-blue-500/70 hover:bg-blue-500/70 cursor-not-allowed"
+                          : "bg-blue-500 hover:bg-blue-600"
+                      }`}
                     >
                       {formStatus === "sending"
                         ? "Broadcasting Signal..."
@@ -375,9 +418,12 @@ const App: React.FC = () => {
               </li>
               <li className="flex gap-4 text-zinc-500 items-center">
                 <Mail className="w-5 h-5 shrink-0 text-blue-500" />
-                <span className="text-xs uppercase tracking-widest font-bold">
-                  engineering@kosinko.tech
-                </span>
+                <a
+                  href="mailto:kosinkotechnologies@gmail.com"
+                  className="text-xs uppercase tracking-widest font-bold"
+                >
+                  kosinkotechnologies@gmail.com
+                </a>
               </li>
             </ul>
           </div>
