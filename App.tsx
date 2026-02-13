@@ -9,7 +9,7 @@ import Header from "./components/Header";
 import Disciplines from "./components/Disciplines";
 import TechStackLabel from "./components/TechStackLabel";
 import Contact from "./components/Contact";
-import Footer from "./components/Footer";
+import Footer from "./components/footer";
 import { ChevronUp } from "lucide-react";
 
 export type View = "home" | "service-detail";
