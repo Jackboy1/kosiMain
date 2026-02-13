@@ -9,7 +9,8 @@ import Header from "./components/Header";
 import Disciplines from "./components/Disciplines";
 import TechStackLabel from "./components/TechStackLabel";
 import Contact from "./components/Contact";
-import Footer from "./components/footer";
+import Footer from "./components/Footer";
+import { ChevronUp } from "lucide-react";
 
 export type View = "home" | "service-detail";
 
@@ -18,6 +19,7 @@ const App: React.FC = () => {
   const [selectedServiceId, setSelectedServiceId] = useState<string | null>(
     null,
   );
+  const [showScrollTop, setShowScrollTop] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -38,6 +40,16 @@ const App: React.FC = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [currentView, selectedServiceId]);
+
+  useEffect(() => {
+    const onScroll = () => {
+      setShowScrollTop(window.scrollY > 320);
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const handleServiceSelect = (id: string) => {
     setSelectedServiceId(id);
@@ -117,6 +129,16 @@ const App: React.FC = () => {
 
       {/* Refactored Footer */}
       <Footer goHome={goHome} scrollToSection={scrollToSection} />
+
+      {showScrollTop ? (
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          aria-label="Scroll to top"
+          className="fixed bottom-6 right-6 z-50 w-11 h-11 rounded-full border border-blue-400/50 bg-zinc-900/90 text-blue-300 hover:bg-blue-500 hover:text-black transition-all flex items-center justify-center"
+        >
+          <ChevronUp className="w-5 h-5" />
+        </button>
+      ) : null}
     </div>
   );
 };
