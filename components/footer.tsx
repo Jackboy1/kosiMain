@@ -41,7 +41,7 @@ const Footer = ({
               <Twitter className="w-5 h-5" />
             </a>
             <a
-              href="https://www.linkedin.com/in/kosiso-umeaka-a07698342?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+              href="https://www.linkedin.com/company/kosinko-technologies-global-limited"
               className="p-3 bg-zinc-900 rounded-lg hover:bg-zinc-800 text-zinc-500 hover:text-blue-400 transition-all"
             >
               <Linkedin className="w-5 h-5" />
