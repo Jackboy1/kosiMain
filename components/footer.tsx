@@ -17,22 +17,32 @@ const Footer = ({
             Architecting the resilient future of technology through specialized
             engineering and strategic innovation.
           </p>
+          <div className="flex items-center gap-6 text-xs uppercase tracking-widest font-bold text-zinc-400">
+            <a
+              href="https://wa.me/2348148200657"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-blue-300 transition-colors"
+            >
+              Contact us 📞 +2348148200657
+            </a>
+          </div>
           <div className="flex gap-4">
             <a
               href="https://www.instagram.com/kosinkotechnologies?igsh=MTBnbDA0aGZ2YWN6bA=="
-              className="p-3 bg-zinc-900 rounded-lg hover:bg-zinc-800 text-zinc-500 hover:text-blue-500 transition-all"
+              className="p-3 bg-zinc-900 rounded-lg hover:bg-zinc-800 text-zinc-500 hover:text-blue-400 transition-all"
             >
               <Instagram className="w-5 h-5" />
             </a>
             <a
               href="https://x.com/KosinkoTechn"
-              className="p-3 bg-zinc-900 rounded-lg hover:bg-zinc-800 text-zinc-500 hover:text-blue-500 transition-all"
+              className="p-3 bg-zinc-900 rounded-lg hover:bg-zinc-800 text-zinc-500 hover:text-blue-400 transition-all"
             >
               <Twitter className="w-5 h-5" />
             </a>
             <a
               href="https://www.linkedin.com/in/kosiso-umeaka-a07698342?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
-              className="p-3 bg-zinc-900 rounded-lg hover:bg-zinc-800 text-zinc-500 hover:text-blue-500 transition-all"
+              className="p-3 bg-zinc-900 rounded-lg hover:bg-zinc-800 text-zinc-500 hover:text-blue-400 transition-all"
             >
               <Linkedin className="w-5 h-5" />
             </a>
@@ -47,33 +57,25 @@ const Footer = ({
             <li>
               <button
                 onClick={goHome}
-                className="hover:text-blue-500 transition-colors"
+                className="hover:text-blue-400 transition-colors"
               >
-                Home Base
+                Home
               </button>
             </li>
             <li>
               <button
                 onClick={() => scrollToSection("services")}
-                className="hover:text-blue-500 transition-colors"
+                className="hover:text-blue-400 transition-colors"
               >
-                Core Services
+                Services
               </button>
             </li>
             <li>
               <button
                 onClick={() => scrollToSection("methodology")}
-                className="hover:text-blue-500 transition-colors"
+                className="hover:text-blue-400 transition-colors"
               >
-                Framework
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={() => scrollToSection("contact")}
-                className="hover:text-blue-500 transition-colors"
-              >
-                Transmission
+                Methodology
               </button>
             </li>
           </ul>
@@ -85,23 +87,37 @@ const Footer = ({
           </h4>
           <ul className="space-y-4 text-sm text-zinc-500 font-bold uppercase tracking-widest">
             <li>
-              <a href="#" className="hover:text-white transition-colors">
-                Architecture Docs
+              <a
+                href="#services"
+                className="hover:text-blue-300 transition-colors"
+              >
+                Consulting
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-white transition-colors">
-                Security Protocols
+              <a
+                href="#services"
+                className="hover:text-blue-300 transition-colors"
+              >
+                Cyber Security
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-white transition-colors">
-                Public Repos
+              <a
+                href="#services"
+                className="hover:text-blue-300 transition-colors"
+              >
+                NFT
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-white transition-colors">
-                Case Studies
+              <a
+                href="https://2fznzl.share-eu1.hsforms.com/2h9zQhi8TRjWV7lxuGCTWzw"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-blue-300 transition-colors"
+              >
+                Learn More
               </a>
             </li>
           </ul>
@@ -124,9 +140,19 @@ const Footer = ({
               <Mail className="w-5 h-5 shrink-0 text-blue-500" />
               <a
                 href="mailto:kosinkotechnologies@gmail.com"
-                className="text-xs uppercase tracking-widest font-bold"
+                className="text-xs uppercase tracking-widest font-bold hover:text-blue-300 transition-colors"
               >
                 kosinkotechnologies@gmail.com
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://2fznzl.share-eu1.hsforms.com/2h9zQhi8TRjWV7lxuGCTWzw"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center w-full px-4 py-3 rounded-xl bg-blue-500/20 border border-blue-400 text-blue-100 text-xs uppercase tracking-[0.2em] font-black hover:bg-blue-500 hover:text-black transition-all"
+              >
+                Learn More
               </a>
             </li>
           </ul>
@@ -139,8 +165,8 @@ const Footer = ({
           NOMINAL // v3.1.2.4
         </div>
         <p className="text-zinc-600 text-[10px] tracking-[0.5em] uppercase font-black text-center">
-          © {new Date().getFullYear()} KOSINKO TECHNOLOGIES. ALL RESILIENCE
-          RESERVED.
+          © {new Date().getFullYear()} KOSINKO TECHNOLOGIES GLOBAL LIMITED. ALL
+          RESILIENCE RESERVED.
         </p>
         <div className="flex gap-8 text-zinc-700 text-[10px] tracking-[0.4em] uppercase font-black">
           <a href="#" className="hover:text-zinc-300">

@@ -1,7 +1,6 @@
 import React from "react";
 import {
   Shield,
-  Lock,
   GitBranch,
   Cloud,
   Network,
@@ -13,7 +12,6 @@ import {
 const expertiseItems = [
   { label: "NFT & Web3", icon: Zap, color: "text-purple-500" },
   { label: "AI & ML", icon: Code2, color: "text-blue-500" },
-  { label: "Checkpoint Security", icon: Lock, color: "text-emerald-500" },
   { label: "Cybersecurity", icon: Shield, color: "text-red-500" },
   { label: "DevSecOps", icon: GitBranch, color: "text-orange-500" },
   { label: "Azure SOC", icon: Cloud, color: "text-cyan-500" },

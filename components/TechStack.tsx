@@ -33,7 +33,7 @@ const technologies: TechItem[] = [
     description:
       "Smart contract development, tokenization and dApps on Ethereum.",
     tools: ["Solidity", "Hardhat", "OpenZeppelin"],
-    caseStudyUrl: "/case-studies/web3",
+    caseStudyUrl: "https://ethereum.org/en/developers/docs/smart-contracts/",
   },
   {
     id: "ai",
@@ -43,7 +43,7 @@ const technologies: TechItem[] = [
     color: "text-blue-400",
     description: "Model development and MLOps for production ML workloads.",
     tools: ["PyTorch", "TensorFlow", "scikit-learn"],
-    caseStudyUrl: "/case-studies/ai-ml",
+    caseStudyUrl: "https://scikit-learn.org/stable/",
   },
   {
     id: "checkpoint",
@@ -53,7 +53,7 @@ const technologies: TechItem[] = [
     color: "text-emerald-400",
     description: "Enterprise firewall & network security expertise.",
     tools: ["Checkpoint R80+", "SmartConsole"],
-    caseStudyUrl: "/case-studies/checkpoint",
+    caseStudyUrl: "https://www.checkpoint.com/",
   },
   {
     id: "cyber",
@@ -63,7 +63,7 @@ const technologies: TechItem[] = [
     color: "text-red-400",
     description: "Security operations, incident response and monitoring.",
     tools: ["SIEM", "Azure Sentinel", "Log Analytics"],
-    caseStudyUrl: "/case-studies/soc",
+    caseStudyUrl: "https://learn.microsoft.com/azure/sentinel/",
   },
   {
     id: "devsecops",
@@ -73,7 +73,7 @@ const technologies: TechItem[] = [
     color: "text-orange-400",
     description: "Integrating security into CI/CD pipelines and automation.",
     tools: ["Trivy", "Snyk", "GitHub Actions"],
-    caseStudyUrl: "/case-studies/devsecops",
+    caseStudyUrl: "https://resources.github.com/devops/",
   },
   {
     id: "azure-soc",
@@ -83,7 +83,7 @@ const technologies: TechItem[] = [
     color: "text-cyan-400",
     description: "Cloud-native security and SOC on Azure.",
     tools: ["Azure Sentinel", "Azure Defender"],
-    caseStudyUrl: "/case-studies/azure-soc",
+    caseStudyUrl: "https://learn.microsoft.com/azure/defender-for-cloud/",
   },
   {
     id: "cicd",
@@ -93,7 +93,7 @@ const technologies: TechItem[] = [
     color: "text-indigo-400",
     description: "Reliable pipelines, deployment automation and delivery.",
     tools: ["GitHub Actions", "ArgoCD"],
-    caseStudyUrl: "/case-studies/cicd",
+    caseStudyUrl: "https://argo-cd.readthedocs.io/en/stable/",
   },
   {
     id: "pentest",
@@ -103,7 +103,7 @@ const technologies: TechItem[] = [
     color: "text-pink-400",
     description: "Offensive assessments and tooling to harden infra.",
     tools: ["Nmap", "Trivy", "Nikto", "Nessus"],
-    caseStudyUrl: "/case-studies/penetration-testing",
+    caseStudyUrl: "https://owasp.org/www-project-web-security-testing-guide/",
   },
   {
     id: "terraform",
@@ -113,7 +113,7 @@ const technologies: TechItem[] = [
     color: "text-amber-400",
     description: "Infrastructure as Code for reproducible environments.",
     tools: ["Terraform", "State management"],
-    caseStudyUrl: "/case-studies/terraform",
+    caseStudyUrl: "https://developer.hashicorp.com/terraform/docs",
   },
   {
     id: "k8s",
@@ -123,7 +123,7 @@ const technologies: TechItem[] = [
     color: "text-sky-400",
     description: "Container orchestration and platform reliability.",
     tools: ["Kubernetes", "Docker", "Helm"],
-    caseStudyUrl: "/case-studies/kubernetes-docker",
+    caseStudyUrl: "https://kubernetes.io/docs/home/",
   },
 ];
 
@@ -145,7 +145,7 @@ const TabButton: React.FC<{
   >
     <span className="relative z-10">{label}</span>
     <span
-      className={`absolute left-0 right-0 bottom-0 h-[2px] bg-blue-400 origin-left transform transition-transform duration-200 ${
+      className={`absolute left-0 right-0 bottom-0 h-0.5 bg-blue-400 origin-left transform transition-transform duration-200 ${
         active ? "scale-x-100" : "scale-x-0 hover:scale-x-100"
       }`}
       aria-hidden
@@ -205,7 +205,7 @@ const TechCard: React.FC<{
 
         <div className="mt-4 flex gap-3">
           <a
-            className="text-xs text-blue-400 hover:text-blue-300 uppercase font-bold tracking-widest"
+            className="px-3 py-1 rounded-md text-xs text-blue-300 bg-blue-500/10 hover:bg-blue-500/25 hover:text-blue-100 uppercase font-bold tracking-widest transition-colors"
             href={item.caseStudyUrl || "#"}
             target={item.caseStudyUrl ? "_blank" : undefined}
             rel={item.caseStudyUrl ? "noreferrer" : undefined}
@@ -219,7 +219,7 @@ const TechCard: React.FC<{
                 item.tools?.join(", ") || item.name,
               );
             }}
-            className="text-xs text-zinc-400 hover:text-white uppercase font-bold tracking-widest"
+            className="px-3 py-1 rounded-md text-xs text-zinc-300 bg-zinc-800/60 hover:bg-zinc-700 hover:text-white uppercase font-bold tracking-widest transition-colors"
             title="Copy tools"
           >
             Copy
